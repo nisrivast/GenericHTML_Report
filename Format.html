@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='ISO-8859-1'>
+<title>Load Test Report</title>
+
+<script type="text/javascript" src="https://cengage.logicmonitor.com/santaba/rpc/signIn?c=cengage&u=cxptest&p=Cxp%23test"></script>
+<script type="text/javascript">
+	function populate_img()
+	{
+		document.getElementById('load').innerHTML="<table class='blank_table graph'><tr><td>S-CXP4</td><td>S-CXP5</td><td>S-CXP6</td></tr><tr><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1869&dataSourceInstanceId=200464&type=host&startTime=begintime&endTime=finaltime'></td><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1869&dataSourceInstanceId=200466&type=host&startTime=begintime&endTime=finaltime'></td><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1869&dataSourceInstanceId=200465&type=host&startTime=begintime&endTime=finaltime'></td></tr></table>";
+
+		document.getElementById('cpu').innerHTML="<table class='blank_table graph'><tr><td>S-CXP4</td><td>S-CXP5</td><td>S-CXP6</td></tr><tr><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1868&dataSourceInstanceId=200464&type=host&startTime=begintime&endTime=finaltime'></td><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1868&dataSourceInstanceId=200466&type=host&startTime=begintime&endTime=finaltime'></td><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1868&dataSourceInstanceId=200465&type=host&startTime=begintime&endTime=finaltime'></td></tr></table>";
+
+		document.getElementById('disk').innerHTML="<table class='blank_table graph'><tr><td>S-CXP4</td><td>S-CXP5</td><td>S-CXP6</td></tr><tr><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1859&dataSourceInstanceId=199980&type=host&startTime=begintime&endTime=finaltime'></td><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1859&dataSourceInstanceId=200081&type=host&startTime=begintime&endTime=finaltime'></td><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1859&dataSourceInstanceId=200296&type=host&startTime=begintime&endTime=finaltime'></td></tr></table>";
+
+		document.getElementById('gc').innerHTML="<table class='blank_table graph'><tr><td>S-CXP4</td><td>S-CXP5</td><td>S-CXP6</td></tr><tr><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1128&dataSourceInstanceId=200158&type=host&startTime=begintime&endTime=finaltime'></td><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1128&dataSourceInstanceId=200045&type=host&startTime=begintime&endTime=finaltime'></td><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1128&dataSourceInstanceId=200199&type=host&startTime=begintime&endTime=finaltime'></td></tr></table>";
+
+		document.getElementById('memory').innerHTML="<table class='blank_table graph'><tr><td>S-CXP4</td><td>S-CXP5</td><td>S-CXP6</td></tr><tr><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=47&dataSourceInstanceId=199966&type=host&startTime=begintime&endTime=finaltime'></td><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=47&dataSourceInstanceId=200036&type=host&startTime=begintime&endTime=finaltime'></td><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=47&dataSourceInstanceId=200147&type=host&startTime=begintime&endTime=finaltime'></td></tr></table>";
+
+	}
+	setTimeout(populate_img,2000);
+</script>
+
+<style>
+body{
+  background:#FFFFFF;
+}
+.description{
+  font-family: 'Vollkorn', serif, tahoma;
+  }
+/* = table
+------------------------*/
+.box-table table{
+  border-collapse:collapse;
+  text-align:left;
+  width:80%;
+  margin:0;
+  padding:0;
+  border:none !important;
+  animation: responsive 5s infinite ease-in-out;
+}
+.box-table{
+  font:normal 12px/150% Arial, Helvetica, sans-serif;
+  overflow:hidden;
+  display:block;
+  width:70%;
+  padding:1.5%;
+}
+
+.box-table table tbody th,
+.box-table table tbody td,
+.box-table table tbody tr{
+  text-align:center;
+  font-family: 'Vollkorn', serif;
+  font-size:1em;
+  border-style: groove;
+  padding:1em;
+}
+.box-table table tbody tr:nth-child(odd){
+  background:#D6DBDF;
+}
+.box-table table tbody tr:nth-child(even){
+  background:#F2F4F4;
+}
+.box-table table tbody tr a{
+  text-decoration:none;
+  color:#0055ff;
+}
+.box-table table tbody tr a:hover{
+  color:#d35400;
+}
+
+.box-table table tr:first-child th {
+  border: 0;
+}
+.box-table table tr:last-child td {
+  border-bottom: 0;
+}
+.box-table table tr td:first-child,
+table tr th:first-child {
+  border-left: 0;
+}
+.box-table table tr td:last-child,
+table tr th:last-child {
+  border-right: 0;
+}
+
+/* = Responsive table
+------------------------*/
+
+/* http://elvery.net/demo/responsive-tables/  */
+@media only screen and (max-width: 800px){
+  .box-table table{
+    width:100%;
+    border-collapse:collapse;
+    border-spacing:0;
+  }
+  .box-table th,
+  .box-table td{
+    margin:0;
+    vertical-align:top;
+  }
+  .box-table th{
+    text-align:left;
+  }
+  .box-table table{
+    display:block;
+    position:relative;
+    width:100%;
+  }
+  .box-table thead{
+    display:block;
+    float:left;
+  }
+  .box-table tbody{
+    display:block;
+    width:auto;
+    position:relative;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
+  .box-table thead tr{
+    display:block;
+  }
+  .box-table th{
+    display:block;
+    text-align:right;
+  }
+  .box-table tbody tr{
+    display:inline-block;
+    vertical-align:top;
+  }
+  .box-table td{
+    display:block;
+    min-height:1.25em;
+    text-align:left;
+  }
+  .box-table th{
+    border-bottom:0;
+    border-left:0;
+  }
+  .box-table td{
+    border-left:0;
+    border-right:0;
+    border-bottom:0;
+  }
+}
+/*----Header table --- */
+.Table-Normal table{
+    position: relative;	
+    padding: 0;
+    width: 100%;
+    height: auto;
+}
+.Table-Normal tr td{
+    background-color: #5D6D7E;
+    font-weight: bold;
+	border-spacing:0
+	margin: 0;
+    padding: 0;
+    border: none;
+    width: 50%;
+	text-align: left;
+}
+.Table-Normal h2{
+	color:#F8F9F9;
+}
+.Table-Normal h3{
+	color:#F8F9F9;
+}
+.Table-Normal h4{
+	color:#F8F9F9;
+	font-size:14px;
+}
+</style>
+<style>
+body{
+font-family:tahoma;
+}
+table#t01 {
+    width:30%;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #F8F8F8 ;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:#F0F0F0;
+}
+table#t01 th	{
+    background-color: black;
+    color: white;
+}
+
+img{
+width:100%;
+}
+
+.img{
+width:auto !important;
+}
+
+table{
+width:60%;
+border:1px solid #ccddff;
+font-family:tahoma;
+font-size:14px;
+background:#fff;
+border-collapse:collapse;
+}
+table .tr{
+background:#6699ff;
+color:#ffffff;
+}
+
+table tr td{
+text-align:center;
+}
+
+.blank_table{
+background:none !important;
+border:none !important;
+font-size:13px;
+}
+
+.graph{
+width:100%;
+}
+
+h3{
+background-color: #F2F4F4;
+color:#002a80;
+font-size:16px;
+text-decoration:underline;
+}
+
+h4{
+color:#002a80;
+font-size:14px;
+text-align:left;
+}
+
+a{
+color:#0055ff;
+text-decoration:none;
+}
+
+.anchor{
+font-size:13px;
+color:#00001a;
+font-weight:bold;
+}
+</style>
+
+<script type="text/javascript">
+  window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+    	 animationEnabled: true,
+      title:{
+        text: "Res Time in Last 5 Successful Builds",
+		fontSize: 14,
+      },
+      
+      axisX:{
+          title: "Build#"
+         },
+   	  
+   	  axisY:{
+          title: "Res. Time (milliseconds)"
+         },
+
+      data: [
+      {
+    	type: "line",
+        dataPoints: [
+        { y: rt_zero, label: 'b_0'},
+        { y: rt_one, label: 'b_1'},
+        { y: rt_two, label: 'b_2'},
+        { y: rt_three, label: 'b_3'},
+		{ y: rt_four, label: 'b_4'}
+        ]
+      }
+      ]
+    });
+    chart.render();
+    
+    $("#chartContainer").onload(function () {
+
+    	var length = chart.options.data[0].dataPoints.length;
+          alert(length);
+
+    	});
+  }
+  </script>
+  
+  <script type="text/javascript" src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  
+<!--  <script type="text/javascript" src="canvasjs.min.js"></script> -->
+</head>
+<body>
+<div class="Table-Normal">
+<table>
+<tr><td>
+<h2>Load Test Report</h2></td>
+<td><a href='http://www.qainfotech.com/'><h4 Style='text-align:right; color:#F8F9F9;'>QA InfoTech P. Ltd.</h4>
+</td></tr>
+</table>
+</div>
+
+<table class='blank_table graph'>
+  <tr>
+	<td style='text-align:left; width:50%;'><h3>JMETER Results</h3></td>
+	<td style='text-align:left; width:50%;'><h3>Load Test Comparison</h3></td>
+  </tr>
+  <tr>
+	<td valign='top'>
+		<h4 style="margin:4px;">Aggregate Result:</h4>
+		<div class="box-table">
+		<table>
+			<tr>
+			<th>Total Transactions</th>
+			<td>transactions</td>
+		</tr>
+		<tr>
+			<th>Avg Res Time (Sec)</th>
+			<td>avgrestime</td>
+		</tr>
+		<tr>
+			<th>Error%</th>
+			<td>error</td>			
+		</tr>
+		<tr>
+			<th>90th Percentile</th>
+			<td>percentile</td>
+		</tr>
+		</table>
+		</div>
+		<table class='blank_table graph'>
+		<tr>
+			<td style='text-align:left;'><a target='_blank' href='Aggregate.csv'>Download Full Aggregate Results</a></td>
+		</tr>
+		</table>
+		
+	</td>
+	<td>
+		<div id="chartContainer" style="height: 300px; width: 80%;"></div>
+	</td>
+  </tr>
+</table>
+
+
+
+
+<hr size='0.5'>
+
+<table class='blank_table graph'>
+  <tr>
+    <td style='text-align:left;'><h4>Response Time</h4> <img  src='ResTime.png' class="img"></td>
+    <td style='text-align:left;'><h4>Hits Per Second</h4> <img  src='HitsPerSec.png' class="img"></td>
+   </tr>
+   <tr>
+   	<td style='text-align:left;'><h4>Response Code Per Second</h4><img  src='ResCode.png' class="img"></td>
+   	<td style='text-align:left;'><h4>Bytes Throughput OverTime</h4><img src='BytesThroughput.png' class='img'></td>
+   </tr>
+ </table>
+
+
+
+<hr size='0.5'>
+<h3>Server Side Metrics</h3>
+<h4>Server Status Pages</h4>
+<div class="box-table">
+<table>
+  <tr>
+    <th>Server</th> <th>10.160.200.141</th> <th>10.160.200.142</th> <th>10.160.200.143</th>
+  </tr>
+  <tr>
+    <th>BeforeTest</th>
+    <td><a href='10.160.200.141_BeforeTest_Status.csv'>Server1 before test</a></td>
+    <td><a href='10.160.200.142_BeforeTest_Status.csv'>Server2 before test</a></td>
+    <td><a href='10.160.200.143_BeforeTest_Status.csv'>Server3 before test</a></td>
+  </tr>
+  
+  <tr>
+    <th>AfterTest</th>
+    <td><a href='10.160.200.141_AfterTest_Status.csv'>Server1 After test</a></td>
+    <td><a href='10.160.200.142_AfterTest_Status.csv'>Server2 After test</a></td>
+    <td><a href='10.160.200.143_AfterTest_Status.csv'>Server3 After test</a></td>
+  </tr>
+  
+  <tr>
+    <th>Delta</th>
+    <td><a href='10.160.200.141_Delta.csv'>Server1 - Delta</a></td>
+    <td><a href='10.160.200.142_Delta.csv'>Server2 - Delta</a></td>
+    <td><a href='10.160.200.143_Delta.csv'>Server3 - Delta</a></td>
+  </tr>
+ </table>
+</div>
+
+<hr size='0.5'>
+<h3>Logic Monitor</h3>
+
+<h4>Load Average on Individual Servers</h4>
+<div id='load'></div>
+<hr size='0.5'>
+  
+<h4>CPU Usage on Individual Servers</h4>
+<div id='cpu'></div><
+<hr size='0.5'>
+ 
+<h4>Disk Usage on Individual Servers</h4>
+<div id='disk'></div>
+<hr size='0.5'>
+  
+<h4>Memory Usage on Individual Servers</h4>
+<div id='memory'></div>
+<hr size='0.5'>
+
+<h4>JVM GC Execution on Individual Servers</h4>
+<div id='gc'></div>
+<hr size='0.5'>
+
+</body>
+</html>
