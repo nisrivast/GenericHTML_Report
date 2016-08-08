@@ -4,6 +4,10 @@
 <meta charset='ISO-8859-1'>
 <title>Load Test Report</title>
 
+<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="csvread.js"></script>
+
+
 <script type="text/javascript" src="https://cengage.logicmonitor.com/santaba/rpc/signIn?c=cengage&u=cxptest&p=Cxp%23test"></script>
 <script type="text/javascript">
 	function populate_img()
@@ -54,7 +58,7 @@ body{
   text-align:center;
   font-family: 'Vollkorn', serif;
   font-size:1em;
-  border-style: groove;
+  border-style: none;
   padding:1em;
 }
 .box-table table tbody tr:nth-child(odd){
@@ -252,6 +256,142 @@ font-weight:bold;
 }
 </style>
 
+<STYLE>
+/* popup_box DIV-Styles*/
+#popup_box { 
+    display:none; /* Hide the DIV */
+    position:fixed;  
+    _position:absolute; /* hack for internet explorer 6 */  
+    height:300px;  
+    width:800px;  
+    background:#FFFFFF;  
+    left: 260px;
+    top: 100px;
+    z-index:100; /* Layering ( on-top of others), if you have lots of layers: I just maximized, you can change it yourself */
+    margin-left: 15px;  
+    
+    /* additional features, can be omitted */
+    border:4px solid #8FB2F3;
+    padding:15px;  
+    font-size:15px;  
+    -moz-box-shadow: 0 0 40px #A9C4F7;
+    -webkit-box-shadow: 0 0 40px #A9C4F7;
+    box-shadow: 0 0 40px #A9C4F7;
+	overflow-y:scroll;
+    
+}
+
+#container {
+    width:100%;
+}
+
+a{  
+cursor: pointer;  
+text-decoration:none;  
+} 
+
+/* This is for the positioning of the Close Link */
+#popupBoxClose {
+    font-size:14px;  
+    line-height:15px;  
+    right:5px;  
+    top:5px;  
+    position:absolute;  
+    color:#6fa5e2;  
+    font-weight:500;      
+}
+#popup_box table{ border-collapse:collapse; border:1px solid #efefef; margin-top:10px; font-size:12px; font-family:verdana; }
+#popup_box table .popup-tr{ background-color:rgba(82, 142, 251, 0.84) !important; }
+#popup_box table tr td{ text-align:left !important; }
+#popup_box table tr:nth-child(2n+1){ background-color:#efefef; }
+</STYLE>
+
+<script>
+function processData(data) {
+	
+    var lines = data.split("-csv-");
+
+    //Set up the data arrays
+
+    var headings = lines[0].split(','); // Splice up the first row to get the headings
+	var output="<table width='100%' border='1' cellpadding='4' style='width:100% !important;'>";
+	output +="<tr class='popup-tr'>";
+	for (var i=1; i<=headings.length; i++) {
+	/* write heading */ 
+	output +="<th align='left'>"+headings[i-1]+"</th>";
+	}
+	output +="</tr>";
+	
+	var cnt=0;
+    for (var j=1; j<lines.length; j++) {
+	
+		if(lines[j][0])
+		{ 
+		cnt++;
+		output +="<tr>";
+		var values = lines[j].split(','); // Split up the comma separated values
+		   // read data and add values
+		   for (var ii=1; ii<=values.length; ii++) {
+		   output +="<td align='left'>"+values[ii-1]+"</td>";
+		   }
+		   
+		output +="</tr>";	  
+		}
+    }
+	if(cnt==0){ output +="<tr><td colspan='2'>No record!</td></tr>"; }
+	output +="</table>";
+	return output;
+	}
+
+		function unloadPopupBox() {    // TO Unload the Popupbox
+            $('#popup_box').fadeOut("slow");
+			$("#popup_box").html('<a id="popupBoxClose" onclick="unloadPopupBox()">Close</a>');
+            $("#container").css({        
+                "opacity": "1"  
+            }); 
+        }    
+        
+        function loadPopupBox() {    // To Load the Popupbox
+            $('#popup_box').fadeIn("slow");
+            $("#container").css({
+                "opacity": "0.3"  
+            });         
+        }
+
+        $(window).load(function () {
+            // for expand collapse
+            var divs=$('.accordion>div').hide();
+
+            var h2s=$('.accordion>h3').click(function () { 
+                h2s.not(this).removeClass('active')
+                $(this).toggleClass('active')
+                divs.not($(this).next()).slideUp()
+                $(this).next().slideToggle()
+                return false;
+
+            });
+       
+            $('#popupBoxClose').click( function() {            
+                unloadPopupBox();
+            });
+                        
+            $('#one').click( function() {
+            	var csv_string=document.getElementById('csvdata_txtarea').value;
+	            $("#popup_box").html('<a id="popupBoxClose" onclick="unloadPopupBox()">Close</a>');
+            	document.getElementById('popup_box').innerHTML +=processData(csv_string);
+            	loadPopupBox();
+            });
+            
+            $('#two').click( function() {
+            	var csv_string=document.getElementById('csvdata_txtarea01').value;
+	            $("#popup_box").html('<a id="popupBoxClose" onclick="unloadPopupBox()">Close</a>');
+            	document.getElementById('popup_box').innerHTML +=processData(csv_string);
+            	loadPopupBox();
+            });
+            
+        });
+</script>
+
 <script type="text/javascript">
   window.onload = function () {
     var chart = new CanvasJS.Chart("chartContainer",
@@ -293,17 +433,21 @@ font-weight:bold;
     	});
   }
   </script>
-  
+   
   <script type="text/javascript" src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
   
 <!--  <script type="text/javascript" src="canvasjs.min.js"></script> -->
 </head>
 <body>
+
+<input type="hidden" name="csvdata_txtarea" id="csvdata_txtarea" value="HighresTimecsvData">
+<input type="hidden" name="csvdata_txtarea01" id="csvdata_txtarea01" value="HigherrRatecsvData">
+
 <div class="Table-Normal">
 <table>
 <tr><td>
 <h2>Load Test Report</h2></td>
-<td><a href='http://www.qainfotech.com/'><h4 Style='text-align:right; color:#F8F9F9;'>QA InfoTech P. Ltd.</h4>
+<td><a href='http://www.qainfotech.com/'> <h4 Style='text-align:right; color:#F8F9F9;'>QA InfoTech P. Ltd.</h4></a>
 </td></tr>
 </table>
 </div>
@@ -341,7 +485,6 @@ font-weight:bold;
 			<td style='text-align:left;'><a target='_blank' href='Aggregate.csv'>Download Full Aggregate Results</a></td>
 		</tr>
 		</table>
-		
 	</td>
 	<td>
 		<div id="chartContainer" style="height: 300px; width: 80%;"></div>
@@ -349,8 +492,41 @@ font-weight:bold;
   </tr>
 </table>
 
+<STYLE>
+.accordion{ cursor:pointer; }
+.acc_container {
+    width: 100%;
+    clear: both;
+    display:none;
+}
+.acc_container .block {
+    padding: 5px 10px;
+}
+
+.arrow{ width:16px !important; }
+</STYLE>
+
+<div class="accordion">
+<h3>Parameters where SLA not meeting</h3>
+<div class="acc_container">
+<div class="block">
+	<div id="popup_box">    
+	<!-- OUR PopupBox DIV-->         
+	<a id="popupBoxClose" onclick="unloadPopupBox()">Close</a>     
+	</div> 
+	<div id="container"> 
+	<!-- Main Page -->     
+		<img align='absmiddle' class='arrow' src="https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519629-129_ArrowRight-16.png">
+		<span id='one'>Transactions with higher res. Time</span>
+		<br>
+		<img align='absmiddle' class='arrow' src="https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519629-129_ArrowRight-16.png">
+		<span id='two'>Transactions with higher Error Rate</span> 
+	</div>
 
 
+</div>
+</div>
+</div>
 
 <hr size='0.5'>
 
@@ -364,8 +540,6 @@ font-weight:bold;
    	<td style='text-align:left;'><h4>Bytes Throughput OverTime</h4><img src='BytesThroughput.png' class='img'></td>
    </tr>
  </table>
-
-
 
 <hr size='0.5'>
 <h3>Server Side Metrics</h3>
@@ -406,7 +580,7 @@ font-weight:bold;
 <hr size='0.5'>
   
 <h4>CPU Usage on Individual Servers</h4>
-<div id='cpu'></div><
+<div id='cpu'></div>
 <hr size='0.5'>
  
 <h4>Disk Usage on Individual Servers</h4>

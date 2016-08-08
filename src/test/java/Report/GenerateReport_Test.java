@@ -1,9 +1,6 @@
 package Report;
 
 import org.testng.annotations.Test;
-
-import net.sourceforge.htmlunit.corejs.javascript.tools.shell.Environment;
-
 import java.io.IOException;
 
 public class GenerateReport_Test {
@@ -15,10 +12,9 @@ public class GenerateReport_Test {
 		
 		DownloadStatusAfterTest.statusPagesafterTest();
 		Delta.sspDelta();
-		GenerateReport_Test ts = new GenerateReport_Test();
+		//GenerateReport_Test ts = new GenerateReport_Test();
 		try{
 			Report.createHTML();
-			System.out.println("Please see the test results at: "+ConfigPropertyReader.getProperty("filePath")+"FinalReport.html");
 		}
 		catch(Exception e){
 			e.printStackTrace();

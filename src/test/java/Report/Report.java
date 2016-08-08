@@ -21,7 +21,9 @@ public class Report {
 	    CSVReader.getBuild();
 	    CSVReader.writeComparisionCSV();
 	    CSVReader.readcomparisionCSV();
-	      
+	    HigherResTime.readHighresTime();
+	    HigherResTime.readcsvString();
+	    
 	     try{
 	         // creates new file in the system
 	         bool = newfile.createNewFile();
@@ -40,7 +42,7 @@ public class Report {
 			br2 = new BufferedReader(new FileReader(ConfigPropertyReader.getProperty("filePath") + "StartTime.txt"));
 
 			while ((line = br.readLine()) != null) {
-				frontEnd = frontEnd.concat(line);
+				frontEnd = frontEnd.concat(line) + "\n";
 				}
 			br.close();
 			while ((line2 = br2.readLine()) != null) {
@@ -48,6 +50,9 @@ public class Report {
 				}
 			br2.close();
 	
+		  frontEnd = frontEnd.replaceAll("HighresTimecsvData", HigherResTime.csvString);
+		  frontEnd = frontEnd.replaceAll("HigherrRatecsvData", HigherResTime.csvString_err);
+			
 	      frontEnd = frontEnd.replace("avgrestime", CSVReader.restime1);
 	      frontEnd = frontEnd.replace("transactions", CSVReader.ttransactions);
 	      frontEnd = frontEnd.replace("error", CSVReader.errorrate).replace("percentile", CSVReader.percentile);
