@@ -14,7 +14,7 @@
 	{
 		document.getElementById('load').innerHTML="<table class='blank_table graph'><tr><td>S-CXP4</td><td>S-CXP5</td><td>S-CXP6</td></tr><tr><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1869&dataSourceInstanceId=200464&type=host&startTime=begintime&endTime=finaltime'></td><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1869&dataSourceInstanceId=200466&type=host&startTime=begintime&endTime=finaltime'></td><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1869&dataSourceInstanceId=200465&type=host&startTime=begintime&endTime=finaltime'></td></tr></table>";
 
-		document.getElementById('cpu').innerHTML="<table class='blank_table graph'><tr><td>S-CXP4</td><td>S-CXP5</td><td>S-CXP6</td></tr><tr><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1868&dataSourceInstanceId=200464&type=host&startTime=begintime&endTime=finaltime'></td><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1868&dataSourceInstanceId=200466&type=host&startTime=begintime&endTime=finaltime'></td><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1868&dataSourceInstanceId=200465&type=host&startTime=begintime&endTime=finaltime'></td></tr></table>";
+		document.getElementById('cpu').innerHTML="<table class='blank_table graph'><tr><td>S-CXP4</td><td>S-CXP5</td><td>S-CXP6</td></tr><tr><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=2258&dataSourceInstanceId=200464&type=host&startTime=begintime&endTime=finaltime'></td><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=2258&dataSourceInstanceId=200464&type=host&startTime=begintime&endTime=finaltime'></td><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=2258&dataSourceInstanceId=200464&type=host&startTime=begintime&endTime=finaltime'></td></tr></table>";
 
 		document.getElementById('disk').innerHTML="<table class='blank_table graph'><tr><td>S-CXP4</td><td>S-CXP5</td><td>S-CXP6</td></tr><tr><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1859&dataSourceInstanceId=199980&type=host&startTime=begintime&endTime=finaltime'></td><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1859&dataSourceInstanceId=200081&type=host&startTime=begintime&endTime=finaltime'></td><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1859&dataSourceInstanceId=200296&type=host&startTime=begintime&endTime=finaltime'></td></tr></table>";
 
@@ -29,6 +29,7 @@
 <style>
 body{
   background:#FFFFFF;
+  margin:0;
 }
 .description{
   font-family: 'Vollkorn', serif, tahoma;
@@ -36,13 +37,13 @@ body{
 /* = table
 ------------------------*/
 .box-table table{
-  border-collapse:collapse;
-  text-align:left;
-  width:80%;
-  margin:0;
-  padding:0;
-  border:none !important;
-  animation: responsive 5s infinite ease-in-out;
+  border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 1px solid rgba(82, 147, 192, 0.62);
+    animation: responsive 5s infinite ease-in-out;
 }
 .box-table{
   font:normal 12px/150% Arial, Helvetica, sans-serif;
@@ -55,14 +56,14 @@ body{
 .box-table table tbody th,
 .box-table table tbody td,
 .box-table table tbody tr{
-  text-align:center;
-  font-family: 'Vollkorn', serif;
-  font-size:1em;
-  border-style: none;
-  padding:1em;
+  text-align: left;
+    /* font-family: verdana; */
+    font-size: 1em;
+    border-style: none;
+    padding: 10px;
 }
 .box-table table tbody tr:nth-child(odd){
-  background:#D6DBDF;
+  background:rgba(82, 147, 192, 0.23);
 }
 .box-table table tbody tr:nth-child(even){
   background:#F2F4F4;
@@ -152,23 +153,26 @@ table tr th:last-child {
 }
 /*----Header table --- */
 .Table-Normal table{
-    position: relative;	
-    padding: 0;
     width: 100%;
     height: auto;
+    padding: 5px;
+    background: rgb(3, 56, 112);
+    border:none;
 }
 .Table-Normal tr td{
-    background-color: #5D6D7E;
+        /* background-color: #5D6D7E; */
     font-weight: bold;
-	border-spacing:0
-	margin: 0;
+    border-spacing: 0 margin: 0;
     padding: 0;
     border: none;
     width: 50%;
-	text-align: left;
+    text-align: left;
 }
 .Table-Normal h2{
-	color:#F8F9F9;
+	color: #d2d7ab;
+    padding-left: 10px;
+    /* font-weight: normal; */
+    font-size: 20px;
 }
 .Table-Normal h3{
 	color:#F8F9F9;
