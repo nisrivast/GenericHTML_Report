@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset='ISO-8859-1'>
-<title>Load Test Report</title>
-
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Report</title>
 <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
-<script type="text/javascript" src="csvread.js"></script>
-
-
 <script type="text/javascript" src="https://cengage.logicmonitor.com/santaba/rpc/signIn?c=cengage&u=cxptest&p=Cxp%23test"></script>
-<script type="text/javascript">
+
+<script>
+
 	function populate_img()
 	{
 		document.getElementById('load').innerHTML="<table class='blank_table graph'><tr><td>S-CXP4</td><td>S-CXP5</td><td>S-CXP6</td></tr><tr><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1869&dataSourceInstanceId=200464&type=host&startTime=begintime&endTime=finaltime'></td><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1869&dataSourceInstanceId=200466&type=host&startTime=begintime&endTime=finaltime'></td><td><img src='https://cengage.logicmonitor.com/santaba/rpc/getGraphImage?c=cengage&u=cxptest&p=demo&time=zoom&graphId=1869&dataSourceInstanceId=200465&type=host&startTime=begintime&endTime=finaltime'></td></tr></table>";
@@ -24,294 +22,32 @@
 
 	}
 	setTimeout(populate_img,2000);
-</script>
-
-<style>
-body{
-  background:#FFFFFF;
-  margin:0;
-}
-.description{
-  font-family: 'Vollkorn', serif, tahoma;
-  }
-/* = table
-------------------------*/
-.box-table table{
-  border-collapse: collapse;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    border: 1px solid rgba(82, 147, 192, 0.62);
-    animation: responsive 5s infinite ease-in-out;
-}
-.box-table{
-  font:normal 12px/150% Arial, Helvetica, sans-serif;
-  overflow:hidden;
-  display:block;
-  width:70%;
-  padding:1.5%;
-}
-
-.box-table table tbody th,
-.box-table table tbody td,
-.box-table table tbody tr{
-  text-align: left;
-    /* font-family: verdana; */
-    font-size: 1em;
-    border-style: none;
-    padding: 10px;
-}
-.box-table table tbody tr:nth-child(odd){
-  background:rgba(82, 147, 192, 0.23);
-}
-.box-table table tbody tr:nth-child(even){
-  background:#F2F4F4;
-}
-.box-table table tbody tr a{
-  text-decoration:none;
-  color:#0055ff;
-}
-.box-table table tbody tr a:hover{
-  color:#d35400;
-}
-
-.box-table table tr:first-child th {
-  border: 0;
-}
-.box-table table tr:last-child td {
-  border-bottom: 0;
-}
-.box-table table tr td:first-child,
-table tr th:first-child {
-  border-left: 0;
-}
-.box-table table tr td:last-child,
-table tr th:last-child {
-  border-right: 0;
-}
-
-/* = Responsive table
-------------------------*/
-
-/* http://elvery.net/demo/responsive-tables/  */
-@media only screen and (max-width: 800px){
-  .box-table table{
-    width:100%;
-    border-collapse:collapse;
-    border-spacing:0;
-  }
-  .box-table th,
-  .box-table td{
-    margin:0;
-    vertical-align:top;
-  }
-  .box-table th{
-    text-align:left;
-  }
-  .box-table table{
-    display:block;
-    position:relative;
-    width:100%;
-  }
-  .box-table thead{
-    display:block;
-    float:left;
-  }
-  .box-table tbody{
-    display:block;
-    width:auto;
-    position:relative;
-    overflow-x:auto;
-    white-space:nowrap;
-  }
-  .box-table thead tr{
-    display:block;
-  }
-  .box-table th{
-    display:block;
-    text-align:right;
-  }
-  .box-table tbody tr{
-    display:inline-block;
-    vertical-align:top;
-  }
-  .box-table td{
-    display:block;
-    min-height:1.25em;
-    text-align:left;
-  }
-  .box-table th{
-    border-bottom:0;
-    border-left:0;
-  }
-  .box-table td{
-    border-left:0;
-    border-right:0;
-    border-bottom:0;
-  }
-}
-/*----Header table --- */
-.Table-Normal table{
-    width: 100%;
-    height: auto;
-    padding: 5px;
-    background: rgb(3, 56, 112);
-    border:none;
-}
-.Table-Normal tr td{
-        /* background-color: #5D6D7E; */
-    font-weight: bold;
-    border-spacing: 0 margin: 0;
-    padding: 0;
-    border: none;
-    width: 50%;
-    text-align: left;
-}
-.Table-Normal h2{
-	color: #d2d7ab;
-    padding-left: 10px;
-    /* font-weight: normal; */
-    font-size: 20px;
-}
-.Table-Normal h3{
-	color:#F8F9F9;
-}
-.Table-Normal h4{
-	color:#F8F9F9;
-	font-size:14px;
-}
-</style>
-<style>
-body{
-font-family:tahoma;
-}
-table#t01 {
-    width:30%;
-}
-table#t01 tr:nth-child(even) {
-    background-color: #F8F8F8 ;
-}
-table#t01 tr:nth-child(odd) {
-   background-color:#F0F0F0;
-}
-table#t01 th	{
-    background-color: black;
-    color: white;
-}
-
-img{
-width:100%;
-}
-
-.img{
-width:auto !important;
-}
-
-table{
-width:60%;
-border:1px solid #ccddff;
-font-family:tahoma;
-font-size:14px;
-background:#fff;
-border-collapse:collapse;
-}
-table .tr{
-background:#6699ff;
-color:#ffffff;
-}
-
-table tr td{
-text-align:center;
-}
-
-.blank_table{
-background:none !important;
-border:none !important;
-font-size:13px;
-}
-
-.graph{
-width:100%;
-}
-
-h3{
-background-color: #F2F4F4;
-color:#002a80;
-font-size:16px;
-text-decoration:underline;
-}
-
-h4{
-color:#002a80;
-font-size:14px;
-text-align:left;
-}
-
-a{
-color:#0055ff;
-text-decoration:none;
-}
-
-.anchor{
-font-size:13px;
-color:#00001a;
-font-weight:bold;
-}
-</style>
-
-<STYLE>
-/* popup_box DIV-Styles*/
-#popup_box { 
-    display:none; /* Hide the DIV */
-    position:fixed;  
-    _position:absolute; /* hack for internet explorer 6 */  
-    height:300px;  
-    width:800px;  
-    background:#FFFFFF;  
-    left: 260px;
-    top: 100px;
-    z-index:100; /* Layering ( on-top of others), if you have lots of layers: I just maximized, you can change it yourself */
-    margin-left: 15px;  
-    
-    /* additional features, can be omitted */
-    border:4px solid #8FB2F3;
-    padding:15px;  
-    font-size:15px;  
-    -moz-box-shadow: 0 0 40px #A9C4F7;
-    -webkit-box-shadow: 0 0 40px #A9C4F7;
-    box-shadow: 0 0 40px #A9C4F7;
-	overflow-y:scroll;
-    
-}
-
-#container {
-    width:100%;
-}
-
-a{  
-cursor: pointer;  
-text-decoration:none;  
-} 
-
-/* This is for the positioning of the Close Link */
-#popupBoxClose {
-    font-size:14px;  
-    line-height:15px;  
-    right:5px;  
-    top:5px;  
-    position:absolute;  
-    color:#6fa5e2;  
-    font-weight:500;      
-}
-#popup_box table{ border-collapse:collapse; border:1px solid #efefef; margin-top:10px; font-size:12px; font-family:verdana; }
-#popup_box table .popup-tr{ background-color:rgba(82, 142, 251, 0.84) !important; }
-#popup_box table tr td{ text-align:left !important; }
-#popup_box table tr:nth-child(2n+1){ background-color:#efefef; }
-</STYLE>
-
-<script>
-function processData(data) {
+	
+	// for toggle
+	function expand_this(val)
+	{
+		var vall=val.split("-"); 
+		var one=vall[0];
+		var len=eval(one)+(vall.length-1);
+		
+		if(document.getElementById('content'+one).style.display=='none' || document.getElementById('content'+one).style.display=='')
+		{
+			for(var i=one ; i<=len ; i++)
+			{
+			$('#content'+i).fadeIn('slow');
+			}
+		}
+		else
+		{
+			for(var i=one ; i<=len ; i++)
+			{ 
+			$('#content'+i).fadeOut('slow');
+			}
+		}
+	}
+	
+	// for popup 
+	function processData(data) {
 	
     var lines = data.split("-csv-");
 
@@ -361,20 +97,10 @@ function processData(data) {
                 "opacity": "0.3"  
             });         
         }
-
-        $(window).load(function () {
-            // for expand collapse
-            var divs=$('.accordion>div').hide();
-
-            var h2s=$('.accordion>h3').click(function () { 
-                h2s.not(this).removeClass('active')
-                $(this).toggleClass('active')
-                divs.not($(this).next()).slideUp()
-                $(this).next().slideToggle()
-                return false;
-
-            });
-       
+		
+		$(window).load(function () {
+		
+			// for popup       
             $('#popupBoxClose').click( function() {            
                 unloadPopupBox();
             });
@@ -394,210 +120,439 @@ function processData(data) {
             });
             
         });
+		
+		// for canvas chart : graph
+		
+		window.onload = function () {
+		var chart = new CanvasJS.Chart("chartContainer",
+		{
+			 animationEnabled: true,
+		  title:{
+			text: "Res Time in Last 5 Successful Builds",
+			fontSize: 14,
+		  },
+		  
+		  axisX:{
+			  title: "Build#"
+			 },
+		  
+		  axisY:{
+			  title: "Res. Time (milliseconds)"
+			 },
+
+		  data: [
+		  {
+			type: "line",
+			dataPoints: [
+			{ y: rt_zero, label: 'b_0'},
+			{ y: rt_one, label: 'b_1'},
+			{ y: rt_two, label: 'b_2'},
+			{ y: rt_three, label: 'b_3'},
+			{ y: rt_four, label: 'b_4'}
+			]
+		  }
+		  ]
+		});
+		chart.render();
+		
+		$("#chartContainer").onload(function () {
+
+			var length = chart.options.data[0].dataPoints.length;
+			  alert(length);
+
+			});
+	  }
+
 </script>
 
-<script type="text/javascript">
-  window.onload = function () {
-    var chart = new CanvasJS.Chart("chartContainer",
-    {
-    	 animationEnabled: true,
-      title:{
-        text: "Res Time in Last 5 Successful Builds",
-		fontSize: 14,
-      },
-      
-      axisX:{
-          title: "Build#"
-         },
-   	  
-   	  axisY:{
-          title: "Res. Time (milliseconds)"
-         },
-
-      data: [
-      {
-    	type: "line",
-        dataPoints: [
-        { y: rt_zero, label: 'b_0'},
-        { y: rt_one, label: 'b_1'},
-        { y: rt_two, label: 'b_2'},
-        { y: rt_three, label: 'b_3'},
-		{ y: rt_four, label: 'b_4'}
-        ]
-      }
-      ]
-    });
-    chart.render();
-    
-    $("#chartContainer").onload(function () {
-
-    	var length = chart.options.data[0].dataPoints.length;
-          alert(length);
-
-    	});
-  }
-  </script>
-   
-  <script type="text/javascript" src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
-  
-<!--  <script type="text/javascript" src="canvasjs.min.js"></script> -->
-</head>
-<body>
-
-<input type="hidden" name="csvdata_txtarea" id="csvdata_txtarea" value="HighresTimecsvData">
-<input type="hidden" name="csvdata_txtarea01" id="csvdata_txtarea01" value="HigherrRatecsvData">
-
-<div class="Table-Normal">
-<table>
-<tr><td>
-<h2>Load Test Report</h2></td>
-<td><a href='http://www.qainfotech.com/'> <h4 Style='text-align:right; color:#F8F9F9;'>QA InfoTech P. Ltd.</h4></a>
-</td></tr>
-</table>
-</div>
-
-<table class='blank_table graph'>
-  <tr>
-	<td style='text-align:left; width:50%;'><h3>JMETER Results</h3></td>
-	<td style='text-align:left; width:50%;'><h3>Load Test Comparison</h3></td>
-  </tr>
-  <tr>
-	<td valign='top'>
-		<h4 style="margin:4px;">Aggregate Result:</h4>
-		<div class="box-table">
-		<table>
-			<tr>
-			<th>Total Transactions</th>
-			<td>transactions</td>
-		</tr>
-		<tr>
-			<th>Avg Res Time (Sec)</th>
-			<td>avgrestime</td>
-		</tr>
-		<tr>
-			<th>Error%</th>
-			<td>error</td>			
-		</tr>
-		<tr>
-			<th>90th Percentile</th>
-			<td>percentile</td>
-		</tr>
-		</table>
-		</div>
-		<table class='blank_table graph'>
-		<tr>
-			<td style='text-align:left;'><a target='_blank' href='Aggregate.csv'>Download Full Aggregate Results</a></td>
-		</tr>
-		</table>
-	</td>
-	<td>
-		<div id="chartContainer" style="height: 300px; width: 80%;"></div>
-	</td>
-  </tr>
-</table>
+<script type="text/javascript" src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 <STYLE>
-.accordion{ cursor:pointer; }
-.acc_container {
-    width: 100%;
-    clear: both;
-    display:none;
-}
-.acc_container .block {
-    padding: 5px 10px;
+/* popup_box DIV-Styles*/
+#popup_box { 
+    display:none; /* Hide the DIV */
+    position:fixed;  
+    _position:absolute; /* hack for internet explorer 6 */  
+    height:300px;  
+    width:800px;  
+    background:#FFFFFF;  
+    left: 260px;
+    top: 100px;
+    z-index:100; /* Layering ( on-top of others), if you have lots of layers: I just maximized, you can change it yourself */
+    margin-left: 15px;  
+    
+    /* additional features, can be omitted */
+    border:4px solid #8FB2F3;
+    padding:15px;  
+    font-size:15px;  
+    -moz-box-shadow: 0 0 40px #A9C4F7;
+    -webkit-box-shadow: 0 0 40px #A9C4F7;
+    box-shadow: 0 0 40px #A9C4F7;
+	overflow-y:scroll;
 }
 
-.arrow{ width:16px !important; }
+#container {
+    width:100%;
+	text-align:left;
+	padding-left:10px;
+}
+
+#container span{  
+cursor: pointer;  
+text-decoration:none;  
+} 
+
+a{  
+cursor: pointer;  
+text-decoration:none;  
+} 
+
+/* This is for the positioning of the Close Link */
+#popupBoxClose {
+    font-size:14px;  
+    line-height:15px;  
+    right:5px;  
+    top:5px;  
+    position:absolute;  
+    color:#6fa5e2;  
+    font-weight:500;      
+}
+#popup_box table{ border-collapse:collapse; border:1px solid #efefef; margin-top:10px; font-size:12px; font-family:verdana; }
+#popup_box table .popup-tr{ background-color:rgba(82, 142, 251, 0.84) !important; }
+#popup_box table tr td{ text-align:left !important; }
+#popup_box table tr:nth-child(2n+1){ background-color:#efefef; }
 </STYLE>
 
-<div class="accordion">
-<h3>Parameters where SLA not meeting</h3>
-<div class="acc_container">
-<div class="block">
-	<div id="popup_box">    
-	<!-- OUR PopupBox DIV-->         
-	<a id="popupBoxClose" onclick="unloadPopupBox()">Close</a>     
-	</div> 
-	<div id="container"> 
-	<!-- Main Page -->     
-		<img align='absmiddle' class='arrow' src="https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519629-129_ArrowRight-16.png">
-		<span id='one'>Transactions with higher res. Time</span>
-		<br>
-		<img align='absmiddle' class='arrow' src="https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519629-129_ArrowRight-16.png">
-		<span id='two'>Transactions with higher Error Rate</span> 
+<style>
+	
+	body{ margin:0; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:12px; }
+	
+	.header{ background:#2a2f33; color:#f1eedc; font-size:18px; font-weight:200; display:flex; padding:5px; }
+	.header div{ width:50%; }
+	.header .header-right{ text-align:right; }
+	
+	.content-area{ display:flex; padding:10px; border-bottom:1px solid #E2E2E2; box-shadow:0 0 15px #bfddf5; }
+	.content-area .content-area-left{ width:49%; padding:2px; }
+	.content-area .content-area-right{ width:49%; margin-left:2%; padding:2px; }
+	.content-area .content-area-full{ width:98%; padding:2px; }
+	.content-area .heading{ font-size:15px; font-weight:bold; font-style:italic; padding:10px 0; }
+	.content-area .content{ text-align:center; }
+	.content-area .content-area-expand{ padding:13px 0px; }
+	.content-area .heading div{ /*to do*/ }
+	.content-area1{ border-bottom:0 !important; box-shadow:0 0 0 #fff !important; }
+	
+	.table{ border-collapse:collapse; border:1px solid #CCCCCC; width:90%; }
+	.table tr{ border-bottom:1px solid #CCCCCC; }
+	.table tr:nth-child(odd){ background:#c0d7e8; }
+	.table tr:nth-child(even){ background:#f5f5f5; }
+	.table tr td{ padding:12px; } .table tr th{ padding:12px; }
+	
+	.main-head{ 
+	color: rgba(43, 113, 239, 0.84);
+    font-size: 25px;
+    padding: 20px 10px;
+    padding-top:0px;
+    font-weight: bold;
+    text-decoration: underline;
+    font-style: initial; }
+	
+	.content{ display:none; }
+	
+	img{ cursor:pointer; }
+	.img{ width:100%; }
+	
+	h4{ 
+	margin: 0px !important;
+    text-align: left;
+    padding-left: 32px;
+    padding-top: 10px;
+	padding-bottom:10px;
+    color: #13bf10;
+	}
+	
+</style>
+
+</head>
+
+<body>
+
+	<input type="hidden" name="csvdata_txtarea" id="csvdata_txtarea" value="HighresTimecsvData">
+	<input type="hidden" name="csvdata_txtarea01" id="csvdata_txtarea01" value="HigherrRatecsvData">
+	
+	<div class="header">
+		
+		<div class="header-left">Load Test Report</div>
+		<div class="header-right"><a target="_blank" hrëf="http://www.qainfotech.com">QA Infotech Pvt. Ltd.</a></div>
+		
 	</div>
-
-
-</div>
-</div>
-</div>
-
-<hr size='0.5'>
-
-<table class='blank_table graph'>
-  <tr>
-    <td style='text-align:left;'><h4>Response Time</h4> <img  src='ResTime.png' class="img"></td>
-    <td style='text-align:left;'><h4>Hits Per Second</h4> <img  src='HitsPerSec.png' class="img"></td>
-   </tr>
-   <tr>
-   	<td style='text-align:left;'><h4>Response Code Per Second</h4><img  src='ResCode.png' class="img"></td>
-   	<td style='text-align:left;'><h4>Bytes Throughput OverTime</h4><img src='BytesThroughput.png' class='img'></td>
-   </tr>
- </table>
-
-<hr size='0.5'>
-<h3>Server Side Metrics</h3>
-<h4>Server Status Pages</h4>
-<div class="box-table">
-<table>
-  <tr>
-    <th>Server</th> <th>10.160.200.141</th> <th>10.160.200.142</th> <th>10.160.200.143</th>
-  </tr>
-  <tr>
-    <th>BeforeTest</th>
-    <td><a href='10.160.200.141_BeforeTest_Status.csv'>Server1 before test</a></td>
-    <td><a href='10.160.200.142_BeforeTest_Status.csv'>Server2 before test</a></td>
-    <td><a href='10.160.200.143_BeforeTest_Status.csv'>Server3 before test</a></td>
-  </tr>
-  
-  <tr>
-    <th>AfterTest</th>
-    <td><a href='10.160.200.141_AfterTest_Status.csv'>Server1 After test</a></td>
-    <td><a href='10.160.200.142_AfterTest_Status.csv'>Server2 After test</a></td>
-    <td><a href='10.160.200.143_AfterTest_Status.csv'>Server3 After test</a></td>
-  </tr>
-  
-  <tr>
-    <th>Delta</th>
-    <td><a href='10.160.200.141_Delta.csv'>Server1 - Delta</a></td>
-    <td><a href='10.160.200.142_Delta.csv'>Server2 - Delta</a></td>
-    <td><a href='10.160.200.143_Delta.csv'>Server3 - Delta</a></td>
-  </tr>
- </table>
-</div>
-
-<hr size='0.5'>
-<h3>Logic Monitor</h3>
-
-<h4>Load Average on Individual Servers</h4>
-<div id='load'></div>
-<hr size='0.5'>
-  
-<h4>CPU Usage on Individual Servers</h4>
-<div id='cpu'></div>
-<hr size='0.5'>
- 
-<h4>Disk Usage on Individual Servers</h4>
-<div id='disk'></div>
-<hr size='0.5'>
-  
-<h4>Memory Usage on Individual Servers</h4>
-<div id='memory'></div>
-<hr size='0.5'>
-
-<h4>JVM GC Execution on Individual Servers</h4>
-<div id='gc'></div>
-<hr size='0.5'>
-
+	
+	<!------------------------ content area ------------------------->
+	
+	<div class="content-area">
+	
+		<div class="content-area-left">
+			
+			<div class="heading"><div>Aggregate Result</div></div>
+			<div class="content" id="content1">
+							
+					<table class='table' align="center" style='margin-top:30px;'>
+						<tr>
+						<th align='left'>Total Transactions</th>
+						<td align='left'>transactions</td>
+					</tr>
+					<tr>
+						<th align='left'>Avg Res Time (Sec)</th>
+						<td align='left'>avgrestime</td>
+					</tr>
+					<tr>
+						<th align='left'>Error%</th>
+						<td align='left'>error</td>			
+					</tr>
+					<tr>
+						<th align='left'>90th Percentile</th>
+						<td align='left'>percentile</td>
+					</tr>
+					</table>
+				
+				<table class='blank_table graph' align="center">
+					<tr>
+						<td style='text-align:left;'><a target='_blank' href='Aggregate.csv'>Download Full Aggregate Results</a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		
+		<div class="content-area-right">
+		
+			<div class="heading"><div>Load Test Comparison</div></div>
+			<div class="content" id="content2"><div id="chartContainer" style="height:300px; width: 100%;"></div></div>
+		
+		</div>
+		
+		<div class="content-area-expand"><img src="https://cdn1.iconfinder.com/data/icons/material-core/19/view-headline-24.png" align="absmiddle" onclick="expand_this('1-2');" /></div>
+			
+	</div>
+	
+	<!------------------------ content area end ------------------------->
+	
+	<!------------------------ content area ------------------------->
+	
+	<div class="content-area">
+	
+		<div class="content-area-full">
+			
+			<div class="heading"><div>Parameters where SLA not meeting</div></div>
+			<div class="content" id="content55">
+				<div id="popup_box">    
+				<!-- OUR PopupBox DIV-->         
+				<a id="popupBoxClose" onclick="unloadPopupBox()">Close</a>     
+				</div> 
+				<div id="container"> 
+				<!-- Main Page -->     
+					<img align='absmiddle' class='arrow' src="https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519629-129_ArrowRight-16.png">
+					<span id='one'>Transactions with higher res. Time</span>
+					<br>
+					<img align='absmiddle' class='arrow' src="https://cdn2.iconfinder.com/data/icons/freecns-cumulus/16/519629-129_ArrowRight-16.png">
+					<span id='two'>Transactions with higher Error Rate</span> 
+				</div>
+			</div>
+			
+		</div>
+				
+		<div class="content-area-expand"><img src="https://cdn1.iconfinder.com/data/icons/material-core/19/view-headline-24.png" align="absmiddle" onclick="expand_this('55');" /></div>
+	
+	</div>
+	
+	<!------------------------ content area end ------------------------->
+	
+	<!------------------------ content area ------------------------->
+	
+	<div class="content-area">
+	
+		<div class="content-area-left">
+			
+			<div class="heading"><div>JMETER Graphs</div></div>
+			<div class="content" id="content3">
+				<h4>Response Time</h4>
+				<img  src='ResTime.png' class="img">
+			</div>
+			
+		</div>
+		
+		<div class="content-area-right">
+		
+			<div class="heading"><div>&nbsp;</div></div>
+			<div class="content" id="content4">
+				<h4>Response Time</h4>
+				<img  src='HitsPerSec.png' class="img">
+			</div>
+		
+		</div>
+		
+		<div class="content-area-expand"><img src="https://cdn1.iconfinder.com/data/icons/material-core/19/view-headline-24.png" align="absmiddle" onclick="expand_this('3-4-5-6');" /></div>
+			
+	</div>
+	
+	<!------------------------ content area end ------------------------->
+	
+	<!------------------------ content area ------------------------->
+	
+	<div class="content-area content-area1">
+	
+		<div class="content-area-left">
+			
+			<div class="heading"><div>&nbsp;</div></div>
+			<div class="content" id="content5">
+				<h4>Response Code Per Second</h4>
+				<img  src='ResCode.png' class="img">
+			</div>
+			
+		</div>
+		
+		<div class="content-area-right">
+		
+			<div class="heading"><div>&nbsp;</div></div>
+			<div class="content" id="content6">
+				<h4>Bytes Throughput OverTime</h4>
+				<img src='BytesThroughput.png' class='img'>
+			</div>
+		
+		</div>
+			
+	</div>
+	
+	<!------------------------ content area end ------------------------->
+	
+	<!------------------------ content area ------------------------->
+	<div class='main-head'>Server Side Metrics</div>
+	<div class="content-area">
+	
+		<div class="content-area-full">
+			
+			<div class="heading"><div>Server Status Pages</div></div>
+			<div class="content" id="content7">
+			
+					<table class='table' align="center">
+					  <tr>
+						<th>Server</th> <th>10.160.200.141</th> <th>10.160.200.142</th> <th>10.160.200.143</th>
+					  </tr>
+					  <tr>
+						<th>BeforeTest</th>
+						<td><a href='10.160.200.141_BeforeTest_Status.csv'>Server1 before test</a></td>
+						<td><a href='10.160.200.142_BeforeTest_Status.csv'>Server2 before test</a></td>
+						<td><a href='10.160.200.143_BeforeTest_Status.csv'>Server3 before test</a></td>
+					  </tr>
+					  
+					  <tr>
+						<th>AfterTest</th>
+						<td><a href='10.160.200.141_AfterTest_Status.csv'>Server1 After test</a></td>
+						<td><a href='10.160.200.142_AfterTest_Status.csv'>Server2 After test</a></td>
+						<td><a href='10.160.200.143_AfterTest_Status.csv'>Server3 After test</a></td>
+					  </tr>
+					  
+					  <tr>
+						<th>Delta</th>
+						<td><a href='10.160.200.141_Delta.csv'>Server1 - Delta</a></td>
+						<td><a href='10.160.200.142_Delta.csv'>Server2 - Delta</a></td>
+						<td><a href='10.160.200.143_Delta.csv'>Server3 - Delta</a></td>
+					  </tr>
+					 </table>
+			
+			</div>
+			
+		</div>
+		
+		<div class="content-area-expand"><img src="https://cdn1.iconfinder.com/data/icons/material-core/19/view-headline-24.png" align="absmiddle" onclick="expand_this('7');" /></div>
+		
+	</div>
+	
+	<!------------------------ content area end ------------------------->
+	
+	<!------------------------ content area ------------------------->
+	
+	<div class="content-area  content-area1">
+	
+		<div class="content-area-full">
+			
+			<div class="heading"><div>Logic Monitor</div></div>
+			<div class="content" id="content8">
+			
+				<h4>Load Average on Individual Servers</h4>
+				<div id='load'></div>
+			
+			</div>
+			
+		</div>
+		
+		<div class="content-area-expand"><img src="https://cdn1.iconfinder.com/data/icons/material-core/19/view-headline-24.png" align="absmiddle" onclick="expand_this('8-9-10-11-12-13');" /></div>
+		
+	</div>
+	
+	<div class="content-area content-area1">
+	
+		<div class="content-area-full">
+			
+			<div class="content" id="content9">
+			
+				<h4>CPU Usage on Individual Servers</h4>
+				<div id='cpu'></div>
+			
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	<div class="content-area content-area1">
+	
+		<div class="content-area-full">
+			
+			<div class="content" id="content10">
+			
+				<h4>Disk Usage on Individual Servers</h4>
+				<div id='disk'></div>
+			
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	<div class="content-area content-area1">
+	
+		<div class="content-area-full">
+			
+			<div class="content" id="content11">
+			
+				<h4>Memory Usage on Individual Servers</h4>
+				<div id='memory'></div>
+			
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	<div class="content-area content-area1">
+	
+		<div class="content-area-full">
+			
+			<div class="content" id="content12">
+			
+				<h4>JVM GC Execution on Individual Servers</h4>
+				<div id='gc'></div>
+			
+			</div>
+			
+		</div>
+		
+	</div>
+		
+	<!------------------------ content area end ------------------------->
+	
+<script>
+// for default expand : first expand
+expand_this('1-2');
+</script>
 </body>
 </html>
