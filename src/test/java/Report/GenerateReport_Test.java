@@ -1,3 +1,5 @@
+/* LTR_v3.0 */
+
 package Report;
 
 import org.testng.annotations.Test;
@@ -12,7 +14,6 @@ public class GenerateReport_Test {
 		
 		DownloadStatusAfterTest.statusPagesafterTest();
 		Delta.sspDelta();
-		//GenerateReport_Test ts = new GenerateReport_Test();
 		try{
 			Report.createHTML();
 		}

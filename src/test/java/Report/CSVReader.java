@@ -148,5 +148,17 @@ public static void readcomparisionCSV() throws IOException{
 		}
 	}
 	br.close();
+	/*if(Integer.parseInt(rt_0)>HigherResTime.SLA_resTime){
+		bn_0 = bn_0.concat("', indexLabel: 'Fail',markerColor: 'red', markerType: 'triangle'");
+	}
+	if(Integer.parseInt(rt_1)>HigherResTime.SLA_resTime){
+		bn_1 = bn_1.concat("', indexLabel: 'Fail',markerColor: 'red', markerType: 'triangle'");
+	}
+	if(Integer.parseInt(rt_2)>HigherResTime.SLA_resTime){
+		bn_2 = bn_2.concat("', indexLabel: 'Fail',markerColor: 'red', markerType: 'triangle'");
+	}
+	if(Integer.parseInt(rt_3)>HigherResTime.SLA_resTime){
+		bn_3 = bn_3.concat("', indexLabel: 'Fail',markerColor: 'red', markerType: 'triangle'");
+	}*/
 }
 }	

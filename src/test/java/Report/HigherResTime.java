@@ -16,11 +16,13 @@ public class HigherResTime {
 	static String csvString = "";
 	static String csvString_err = "";
 	
+	static Integer SLA_resTime = Integer.parseInt(ConfigPropertyReader.getProperty("resTime_inSLA"));
+	static Double SLA_errRate = Double.parseDouble(ConfigPropertyReader.getProperty("errRate_inSLA"));
+	
 	public static void readHighresTime() throws NumberFormatException, IOException{
 		String fileName = ConfigPropertyReader.getProperty("filePath") + "Aggregate.csv";
 		
-		Integer SLA_resTime = Integer.parseInt(ConfigPropertyReader.getProperty("resTime_inSLA"));
-		Double SLA_errRate = Double.parseDouble(ConfigPropertyReader.getProperty("errRate_inSLA"));
+		
 
 		BufferedReader br = null;
 		String line = "";
